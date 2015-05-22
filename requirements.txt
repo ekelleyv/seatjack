@@ -21,4 +21,3 @@ requests==2.5.1
 six==1.9.0
 urllib3==1.10.4
 wsgiref==0.1.2
-zbar==0.10
