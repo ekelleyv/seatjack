@@ -64,7 +64,9 @@ def index():
 
 @app.route('/tickets')
 def tickets():
+    print "Getting ticket output"
     ticket_output = _get_tickets()
+    print "got ticket_output"
 
     return json.dumps(ticket_output)
 
