@@ -1,8 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="big-image-container" style="background-image:url({{ticket.image_url}})">
-    </div>
-    <a class="big-btn" href="/ticket/{{ticket.id}}">
-    View Ticket
+    <img class="src-image" src="{{ticket.image_url}}"/>
+    <div class="summary-body">
+            {{ticket.tweet_body|safe}}
+        </div>
+    <a href="/ticket/{{ticket.id}}">
+        <div class="big-btn">
+            View Ticket
+        </div>
     </a>
 {% endblock %}
