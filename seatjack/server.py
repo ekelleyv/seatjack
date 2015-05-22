@@ -18,7 +18,7 @@ print "STARTING SERVER"
 
 def _get_tickets():
     session = Session()
-    image_tweets = session.execute("select min(id), min(tweet_id) as tweet_id, min(tweet_body) as tweet_body, original_image_url from image_tweets where barcode_value IS NOT NULL group by original_image_url ORDER BY created_at DESC")
+    image_tweets = session.execute("select min(id), min(tweet_id) as tweet_id, min(tweet_body) as tweet_body, original_image_url from image_tweets where barcode_value IS NOT NULL group by original_image_url ORDER BY min(created_at) DESC")
 
     ticket_output = []
 
