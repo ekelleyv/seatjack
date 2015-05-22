@@ -18,6 +18,7 @@ print "STARTING SERVER"
 
 def _get_tickets():
     session = Session()
+    print "executing tickets"
     image_tweets = session.execute("select min(id), min(tweet_id) as tweet_id, min(tweet_body) as tweet_body, original_image_url from image_tweets where barcode_value IS NOT NULL group by original_image_url ORDER BY min(created_at) DESC")
 
     ticket_output = []
@@ -26,7 +27,7 @@ def _get_tickets():
         ticket = {
             "id" : tweet[0],
             "tweet_id" : tweet[1],
-            "tweet_body" : bleach.linkify(tweet[2].decode('utf-8')),
+            "tweet_body" : bleach.linkify(tweet[2].encode('utf-8')),
             "image_url" : tweet[3]
         }
         ticket_output.append(ticket)
@@ -39,7 +40,7 @@ def _get_ticket(ticket_id):
     ticket = {
         "id" : tweet.id,
         "tweet_id" : tweet.tweet_id,
-        "tweet_body" : bleach.linkify(tweet.tweet_body.decode('utf-8')),
+        "tweet_body" : bleach.linkify(tweet.tweet_body.encode('utf-8')),
         "image_url" : tweet.original_image_url,
         "barcode_value" : tweet.barcode_value
     }
@@ -57,9 +58,6 @@ def serve_pil_image(pil_img):
 
 @app.route('/')
 def index():
-    print "in get home"
-    from seatjack.config import DATABASE_URL
-    print DATABASE_URL
     return render_template('tickets.html', tickets=_get_tickets())
 
 @app.route('/tickets')
