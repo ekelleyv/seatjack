@@ -57,6 +57,9 @@ def serve_pil_image(pil_img):
 
 @app.route('/')
 def index():
+    print "in get home"
+    from seatjack.config import DATABASE_URL
+    print DATABASE_URL
     return render_template('tickets.html', tickets=_get_tickets())
 
 @app.route('/tickets')
