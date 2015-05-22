@@ -1,1 +1,1 @@
-web: gunicorn seatjack.server:app --log-file=- --log-level debug
+web: gunicorn seatjack.server:app --workers 3 --log-file=-
