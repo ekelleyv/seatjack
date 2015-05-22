@@ -18,7 +18,7 @@ class TwitterScraper(object):
         # print tweets
         return tweets
 
-    def scrape_history(self, start_id=None, target_number=1000):
+    def scrape_history(self, start_id=None, target_number=4000):
         image_tweets = []
         min_id=start_id
 
@@ -46,8 +46,8 @@ class TwitterScraper(object):
             except:
                 print "Can't decode"
 
-
         session.commit()
+
 
         session.close()
 
@@ -55,4 +55,4 @@ class TwitterScraper(object):
 
 if __name__ == '__main__':
     ts = TwitterScraper()
-    ts.scrape_history(start_id=598995076124155905)
+    ts.scrape_history()

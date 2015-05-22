@@ -32,7 +32,7 @@ class TicketParser(object):
     def parse(self):
         session = Session()
 
-        tweets = session.query(ImageTweet).filter(ImageTweet.parsed == False).all()
+        tweets = session.query(ImageTweet).filter(ImageTweet.parsed == 0).all()
 
         for i, tweet in enumerate(tweets):
             print i
