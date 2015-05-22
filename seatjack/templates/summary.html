@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="big-image-container" style="background-image:url({{ticket.image_url}})">
+    </div>
+    <a class="big-btn" href="/ticket/{{ticket.id}}">
+    View Ticket
+    </a>
+{% endblock %}

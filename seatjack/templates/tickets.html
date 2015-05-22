@@ -1,0 +1,16 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    {% for ticket in tickets %}
+        <div class="ticket-container">
+            <div class="ticket-image" style="background-image:url({{ticket.image_url}})">
+            </div>
+            <div class="ticket-body">
+            {{ticket.tweet_body|safe}}
+            </div>
+                <a href="summary/{{ticket.id}}" class="arrow">
+                    <img src="{{ url_for('static', filename='img/arrow.png') }}"/>
+                </a>
+        </div>
+    {% endfor %}
+{% endblock %}

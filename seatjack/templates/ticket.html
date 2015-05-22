@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SeatJack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="content full">
+        <div class="img-container">
+            <img class="big-logo" src="{{ url_for('static', filename='img/logo.png') }}">
+            <img class="barcode" src="/barcode/{{ticket.id}}">
+        </div>
+    </div>
+</body>
+</html>
