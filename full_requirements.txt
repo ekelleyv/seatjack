@@ -8,7 +8,7 @@ PyYAML==3.11
 Rtree==0.8.2
 SQLAlchemy==0.8.7
 Wand==0.4.0
-Werkzeug==0.10.4
+Werkzeug==0.15.3
 amqp-dispatcher==0.1.1
 argparse==1.2.1
 bleach==1.4.1
