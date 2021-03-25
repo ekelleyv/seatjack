@@ -13,7 +13,7 @@ MarkupSafe==0.23
 MySQL-python==1.2.5
 Pillow==2.7.0
 python-twitter==2.2
-PyYAML==3.11
+PyYAML==5.4
 qrcode==5.1
 requests==2.5.1
 six==1.9.0
