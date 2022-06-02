@@ -23,7 +23,7 @@ fuzzywuzzy==0.5.0
 gevent==1.0.1
 greenlet==0.4.7
 haigha==0.7.3
-html5lib==0.99999
+html5lib==0.99999999
 humanfriendly==1.14
 itsdangerous==0.24
 lxml==3.4.2
